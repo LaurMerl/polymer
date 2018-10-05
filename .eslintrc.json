@@ -1,0 +1,17 @@
+{
+    "extends": "airbnb",
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "indent": ["error", 4],
+        "max-len": 0,
+        "import/named": 2,
+        "function-paren-newline": 0,
+        "import/export": 2
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "allowImportExportEverywhere": true
+    }
+}

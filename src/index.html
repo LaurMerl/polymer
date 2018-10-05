@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+	<title>Polymer Setup</title>
+
+  <!-- See https://goo.gl/OOhYW5 -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- See https://goo.gl/qRE0vM -->
+  <meta name="theme-color" content="#A7FFEB">
+
+  <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Polymer Setup">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Setup">
+
+  <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#A7FFEB">
+
+  <!-- Manifest for Windows -->
+  <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+
+  <!-- Default twitter cards -->
+  <meta name="twitter:card" content="summary">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Polymer setup">
+
+	<style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: calc(100% + 4 * (100vw - 600px) / 400);
+    }
+
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      background-color: #FFF;
+      overflow: hidden;
+      color: #000;
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      height: 100%;
+    }
+	</style>
+
+  <script>
+    window.MyAppGlobals = { rootPath: '/' };
+    document.addEventListener('WebComponentsReady', function componentsReady() {
+      document.removeEventListener('WebComponentsReady', componentsReady, false);
+
+      var script = document.createElement('script');
+      script.async = true
+      script.src = '<%= htmlWebpackPlugin.files.chunks["main"].entry %>';
+
+      var refScript = document.body.getElementsByTagName('script')[0];
+      refScript.parentNode.insertBefore(script, refScript);
+    }, false);
+  </script>
+</head>
+
+<body>
+  <my-app></my-app>
+  <noscript>
+    Please enable JavaScript to view this website.
+  </noscript>
+
+  <script defer src="<%= htmlWebpackPlugin.options.paths.webcomponents %>"></script>
+</body>
+
+</html>
