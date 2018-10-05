@@ -1,5 +1,5 @@
-
 import {PolymerElement, html} from '@polymer/polymer/polymer-element';
+import button from '../button/index';
 
 import css from './style.pcss';
 import template from './template.html';
@@ -36,6 +36,7 @@ class BaseView extends PolymerElement {
     constructor() {
         super();
         this.common_part = "Here there is the common part to every view."
+        this.buttonContent = "Buy me. NOW."
     }
 }
 
