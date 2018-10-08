@@ -9,25 +9,16 @@
   <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
     <app-toolbar>Menu</app-toolbar>
     <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-      <a name="view1" href="[[rootPath]]view1">View One</a>
-      <a name="view2" href="[[rootPath]]view2">View Two</a>
-      <a name="view3" href="[[rootPath]]view3">View Three</a>
+      <a name="vegetables" href="[[rootPath]]vegetables">Vegetables</a>
+      <a name="animals" href="[[rootPath]]animals">Animals</a>
+      <a name="fornitures" href="[[rootPath]]fornitures">Fornitures</a>
     </iron-selector>
   </app-drawer>
 
   <!-- Main content -->
   <app-header-layout has-scrolling-region="">
 
-    <title-banner></title-banner>
-
-    <iron-pages
-    selected="[[page]]"
-    attr-for-selected="name"
-    role="main">
-      <base-view name="view1" order="1" title="Title 1" body="Body 1"></base-view>
-      <base-view name="view2" order="2" title="Title 2" body="Body 2"></base-view>
-      <base-view name="view3" order="3" title="Title 3" body="Body 3"></base-view>
-      <my-view404 name="view404"></my-view404>
-  </iron-pages>
+  <title-banner></title-banner>
+  <base-view></base-view>
   </app-header-layout>
 </app-drawer-layout>

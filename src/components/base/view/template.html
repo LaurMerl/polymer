@@ -1,9 +1,9 @@
-<div class="card">
-    <div class="circle">[[order]]</div>
-    <h1>[[title]]</h1>
-    <p>[[body]]</p>
-    <p>[[common_part]]</p>
-    <!-- <p>${this.emTemplate}</p>
-    <p>Whatever here</p> -->
-    <button-blue content=[[buttonContent]]></button-blue>
-</div>
+<ul class="grid">
+    <dom-repeat items="{{items}}">
+        <template observe="category">
+        <li>
+            <a href$="[[_getItemHref(item)]]"><item-grid order={{item.order}} title={{item.title}} name={{item.name}} body={{item.body}}></item-grid></a>
+        </li>
+        </template>
+    </dom-repeat>
+</ul>

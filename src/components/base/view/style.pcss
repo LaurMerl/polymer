@@ -1,9 +1,29 @@
-:host {
-  display: inline-flex;
-  background-color: #EFF5FF;
-  border: 1px solid #DADFE8;
-  padding: 8px 48px;
-  font-size: 18px;
-  color: #000000;
-  margin: 2em;
+.grid {
+  @apply --layout-horizontal;
+  @apply --layout-wrap;
+  @apply --layout-justified;
+  margin: 0 10px 32px 10px;
+  padding: 0;
+  list-style: none;
+}
+.grid li {
+  -webkit-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: 33%;
+  flex-basis: 33%;
+  max-width: 33%;
+}
+.grid a {
+  display:block;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .hero-image {
+    display: none;
+  }
+  .grid  li {
+    -webkit-flex-basis: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
 }
